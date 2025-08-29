@@ -8,5 +8,5 @@ fifth_class = float(input("What is your grade for art?"))
 sixth_class = float(input("What is your grade for english?"))
 seventh_class = float(input("What is your grade for math? (I'm guessing it's not good. :)"))
 
-average_grade = ((first_class + second_class + third_class + fourth_class + fifth_class + sixth_class + seventh_class)/7)
-print(round(average_grade, 2),"Your GPA is", average_grade)
+average_grade = (round((first_class + second_class + third_class + fourth_class + fifth_class + sixth_class + seventh_class)/7*100)/100)
+print("Your average grade is", average_grade)
