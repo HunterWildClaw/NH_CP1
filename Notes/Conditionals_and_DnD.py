@@ -2,10 +2,10 @@
 
 #import libraries
 import random
-monster_hp = 30
+monster_hp = 10
 dmg_modifier = 2
 atk_bonus = 3
-player_hp = 25
+player_hp = 10
 
 roll = random.randint(1,20)
 
