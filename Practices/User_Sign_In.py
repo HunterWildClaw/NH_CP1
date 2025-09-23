@@ -1,9 +1,9 @@
 #NH 2nd user sign in
 
-username = input("Give your username: ")
-password = input("Give your password: ")
+username = input("Set your username: ")
+password = input("Set your password: ")
 
-imported_username = input("Hello user. Please give username: ")
+imported_username = input("Hello user. Please give your username: ")
 while imported_username != username:
     imported_username = input("Incorrect. Try again: ")
 if imported_username == username:
@@ -11,7 +11,7 @@ if imported_username == username:
 else:
     print("Incorrect.")
 
-imported_password = input("Hello user. Please give password: ")
+imported_password = input("Hello user. Please give your password: ")
 while imported_password != password:
     imported_password = input("Incorrect. Try again: ")
 if imported_password == password:
