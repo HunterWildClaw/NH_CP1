@@ -1,7 +1,7 @@
-# NH 2nd conditionals notes
+# NH 2nd Dungeons and Dragons
 
-#import libraries
 import random
+
 monster_hp = 10
 dmg_modifier = 2
 atk_bonus = 3
@@ -39,17 +39,3 @@ if monster_hp and monster_hp > 0:
     print("It is the monsters turn.")
 else:
     print("The monster is dead.")
-
-
-#num = int(input("Enter a random number: "))
-
-#if num > 0:
-    #print(f"Your number was {num}. That number is a positive number.")
-#elif num < 0:
-    #print(f"Your number was {num}. That's a negative number.")
-#elif num == 67:
-    #print(f"{num}! I love six seven!")
-#else:
-    #print(f"Your number is 0. Oof")
-
-
