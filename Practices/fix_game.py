@@ -9,17 +9,24 @@ def start_game():
     attempts = 0
     game_over = False
     while not game_over:
-        guess = input("Enter your guess: ")
+        #This needed to be an integer
+        guess = int(input("Enter your guess: "))
         if attempts >= max_attempts:
             print(f"Sorry, you've used all {max_attempts} attempts. The number was {number_to_guess}.")
             game_over = True
-        if guess == number_to_guess:
+        #This needs to be elif. Not just if.
+        elif guess == number_to_guess:
             print("Congratulations! You've guessed the number!")
             game_over = True
         elif guess > number_to_guess:
             print("Too high! Try again.")
         elif guess < number_to_guess:
-            print("Too low! Try again.")  
-        continue
+            print("Too low! Try again.")
+        else:
+            print("Put a number 1-100.")
+
+        #There needs to be an else statement.
+        #There doesn't need to be a continue.
     print("Game Over. Thanks for playing!")
-def start_game():
+start_game()
+#There doesn't need to be a :. And you didn't have to redefine it.
