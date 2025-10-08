@@ -9,9 +9,9 @@ while True:
         print("Alright. You have chosen death!")
         player_move = input("Ok so you need to choose rock, paper, or scissors. Which one? ").lower().strip()
         print("Rock!")
-        time.sleep(1)
+        time.sleep(0.5)
         print("Paper!")
-        time.sleep(1)
+        time.sleep(0.5)
         print("Scissors!")
         cpu_move = random.randint(1,3)
 
