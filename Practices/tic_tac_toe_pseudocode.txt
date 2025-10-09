@@ -1,0 +1,53 @@
+NH 2nd Tic Tac Toe Pseudocode
+Import random first
+
+While True so that it will run while the code is working and is legit.
+    Now make a three by three board with numbers 1-9 in it using a list and \n.
+    Show the board
+    Then ask user what number they would like to make X. Then replace said number for X.
+    Show the board
+    Make computer choose a random number using the numbers left and whatever number it chooses change that to O.
+    Show the board
+    Then ask user what number they want for their second X and replace that number for X.
+    Show the board
+    Then make computer choose a random number using the numbers left and whatever number it chooses change that to O.
+    Show the board
+    Then ask user what number they want for their third X and replace that number for X.
+    Show the board
+    Then make computer choose a random number using the numbers left and whatever number it chooses change that to O.
+    Show the board.
+    Then ask the user what number they want for their fourth X and replace that number for X.
+    Then make computer choose a random number using the numbers left and whatever number it chooses change that to O.
+    Then ask the user what number they want for their fifth X and replace that number for X.
+    Then make computer use the last number and change that to O.
+    By now the board should be full so have the computer check for three X's or O's in a row
+break the code after 9 turns because the board is full.
+
+if 1,2,3 are all X's or all O's:
+    then show that either X or O won depending on whether or not 1,2,3 is full of X's or O's.
+
+    otherwise 4,5,6 are all X's or all O's:
+        then show that either X or O won depending on whether or not 4,5,6 is full of X's or O's.
+
+    otherwise 7,8,9 are all X's or all O's:
+        then show that either X or O won depending on whether or not 7,8,9 is full of X's or O's.
+
+    otherwise 1,5,9 are all X's or all O's:
+        then show that either X or O won depending on whether or not 1,5,9 is full of X's or O's.
+
+    otherwise 2,5,8 are all X's or all O's:
+        Then show that either X or O won depending on whether or not 2,5,8 is full of X's or O's.
+
+    otherwise 3,5,7 are all X's or all O's:
+        Then show that either X or O won depending on whether or not 3,5,7 is full of X's or O's.
+
+    otherwise 1,4,7 are all X's or all O's:
+        Then show that either X or O won depending on whether or not 1,4,7 is full of X's or O's.
+
+    otherwise 3,6,9 are all X's or all O's:
+        Then show that either X or O won depending on whether or not 3,6,9 is full of X's or O's.
+    
+else:
+    show that it's a cats game and no one won. Tie!
+
+if user did not input a number that's either not on the board or already covered, show you need to use a number from 1-9 that isn't already used.
