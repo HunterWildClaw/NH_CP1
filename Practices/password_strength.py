@@ -7,31 +7,35 @@ password = input("What's your password? ")
 
 # Check Password to make sure it at least had 8 chars in it. Then show how many characters it has in it. Do this by creating a line of code that has a new variable called PASSWORD LENGTH and define the variable as the length of the password. len(Password) will work. Then show how many characters it has in it so that you know.
 password_length = str(len(password))
-print("You password has " + password_length + " characters in it.")
 password_length_num = int(len(password))
 if password_length_num >= 8:
+    print("You password has " + password_length + " characters in it.")
     password_score += 1
 # checking password atributes
     # Check PASSWORD to make sure it has at least one uppercase letter in it. Then show the uppercase letters it has.
 for upper_letter in password:
     if upper_letter in 'QWERTYUIOPASDFGHJKLZXCBNM':
-        print("Your password has this capital letter in it: "+upper_letter+".")
+        print("Your password has at least 1 capital letter in it.")
         password_score += 1
+        break
     # Check PASSWORD to make sure it had at least one lowercase letter in it. Then show the lowercase letters it has.
 for lower_letter in password:
     if lower_letter in 'qwertyuiopasdfghjklzxcvbnm':
-        print("Your password has this lower case letter in it: "+lower_letter+".")
+        print("Your password has at least 1 lowercase letter in it.")
         password_score += 1
-    # Check PASSWORD to make sure it has at least one number in it. Then show the numbers.
+        break
+    # Check PASSWORD to make sure it has at least one number in it. Then show the numbers it has.
 for number in password:
     if number in '1234567890':
-        print("Your password has this number in it: "+number+".")
+        print("Your password has at least 1 number in it.")
         password_score += 1
+        break
     # Check PASSWORD to make sure it has at least one special character in it. Then show the special chars it has.
 for special_character in password:
     if special_character in '()!@#$%^&*()_+-=[]}{|;:",.<>?/':
-        print("Your password has this special character in it: "+special_character+".")
+        print("Your password has at least 1 special character in it.")
         password_score += 1
+        break
     # If PASSWORD has at least 8 characters, one uppercase letter, one lower case letter, one number, and one special character in it, then show that it is a very strong password.
 if password_score == 5:
     print("You have a very strong password.")
