@@ -44,3 +44,6 @@ print(f"Monster Health: {monster_hp}")
 player_hp, monster_hp = attack(15, "player")
 print(f"Player Health: {player_hp}")
 print(f"Monster Health: {monster_hp}")
+
+print(f"a = {ord("a")}")
+print(f"100 = {chr(100)}")
