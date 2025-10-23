@@ -1,9 +1,9 @@
 # NH 2nd Caesar Cipher
 
-def caesar_cipher(text, shift, mode='encrypt'):
+def caesar_cipher(text, shift, mode):
 
     result = ""
-    if mode == 'decrypt':
+    if mode == '2':
         shift = -shift  # Reverse the shift for decoding
 
     for char in text:
