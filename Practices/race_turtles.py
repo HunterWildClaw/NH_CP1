@@ -56,14 +56,18 @@ Donetello.pendown()
 Win_Guy = t.Turtle()
 Win_Guy.penup()
 Win_Guy.goto(-200, -200)
-# Set speed and movement of turtles
+# Set speed and movement of turtles & Anounce Winner
 turtles = [Raphael, Donetello, Michelangelo, Leonardo, That_One_Guy]
 while True:
     for i in turtles:
-        i.forward(r.randint(1, 500))
-        if i.ycor() == 500:
+        if i.xcor() >= 300:
             Win_Guy.pendown()
             Win_Guy.write("We have a winner!!", font = ("Arial", 20, "normal"))
             break
-t.done()
+        i.forward(r.randint(1, 25))
+        if i.xcor() >= 300:
+            Win_Guy.pendown()
+            Win_Guy.write("We have a winner!!", font = ("Arial", 20, "normal"))
+            break
 
+t.done()
