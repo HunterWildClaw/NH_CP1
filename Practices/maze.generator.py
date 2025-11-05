@@ -4,79 +4,59 @@ import random as dum
 # Import turtle as bob
 import turtle as bob
 
-# Make a function to test solveabilty of maze
-def is_solveable(row_grid, col_grid):
-    size = len(row_grid) - 1
-    visited = set()
-    stack = [(0,0)]
+#Define the rows and collumns
+num_rows = 60
+num_cols = 60
 
-    while stack:
-        x, y = stack.pop()
-
-        if x == size - 1 and y ==size - 1:
-            return True
-        
-        if (x, y) in visited:
-            continue
-
-        visited.add((x,y))
-
-        if x < size - 1 and col_grid[y][x+1] == 0:
-            stack.append((x+1, y))
-
-        if y < size - 1 and row_grid[y+1][x] == 0:
-            stack.append((x, y+1))
-
-        if x > 0 and col_grid[x][y] == 0:
-            stack.append((x-1, y))
-
-        if y > 0 and row_grid[y][x] == 0:
-            stack.append((x, y-1))
-
-    return False
-
-
-#Make maze generator as a function
-def maze_generation():
-    #Make the rows
-    grid_rows = [[1,1,0,1,1,1],
-                 [1,1,1,1,0,1],
-                 [1,0,0,1,1,1],
-                 [1,1,0,1,0,1],
-                 [1,1,0,0,0,1],
-                 [1,1,1,0,1,1]]
-    for wall in grid_rows:
-        if wall == 1:
+# Make a function for the maze
+def create_maze_grid(rows, cols):
+    grid = []
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            block = {
+                "visited": False,
+                "walls": {
+                    "up": True,
+                    "down": True,
+                    "left": True,
+                    "right": True
+                }
+            }
+            row.append(block)
+        grid.append(row)
+    return grid
+cell_size=10
+# Make the turtle have infinite speed
+bob.speed(1)
+bob.tracer(0)
+#Hide the turtle after the maze is done
+bob.hideturtle()
+#Then actually call the function to make the maze
+grid=create_maze_grid(num_rows, num_cols)
+for i in grid:
+    for block in i:
+        if block["walls"]["up"]:
             bob.pendown()
-            bob.forward(100)
-
-        elif wall == 0:
+            bob.goto(x + cell_size, y)
             bob.penup()
-            bob.forward(100)
-
-    #Make the collumns
-    bob.right(90)
-    grid_cols = [[1,1,1,1,1,1],
-                 [1,0,0,1,1,1],
-                 [1,0,0,1,0,1],
-                 [1,0,1,0,1,1],
-                 [1,1,0,1,1,1],
-                 [1,0,1,1,0,1]]
-    for wal in grid_cols:
-        if wal == 1:
+            bob.goto(x, y)
+        if block["walls"]["right"]:
+            bob.goto(x + cell_size, y)
             bob.pendown()
-            bob.forward(100)
-
-        elif wal == 0:
+            bob.goto(x + cell_size, y - cell_size)
             bob.penup()
-            bob.forward(100)
-
-#Make the screen
-screen = bob.Screen()
-screen.setup(600, 600)
-
-#Make the maze
-bob.speed(0)
-maze_generation()
-
-bob.done()
+            bob.goto(x, y)
+        if block["walls"]["down"]:
+            bob.goto(x + cell_size, y - cell_size)
+            bob.pendown()
+            bob.goto(x, y - cell_size)
+            bob.penup()
+            bob.goto(x, y)
+        if block["walls"]["left"]:
+            bob.goto(x, y - cell_size)
+            bob.pendown()
+            bob.goto(x, y)
+            bob.penup()
+        bob.update()
+        bob.done()
