@@ -1,1 +1,0 @@
-i.forward(r.randint(1, 50))
