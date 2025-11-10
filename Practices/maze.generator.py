@@ -450,7 +450,8 @@ def solveability_check():
     solver.color("#FF8800")
     solver.penup()
     solver.goto(50,0)
-    
+    solver.setheading(270)
+    solver.forward(150)
 
 def border_generation():
     bob.speed(0)
@@ -470,10 +471,9 @@ def border_generation():
     bob.right(90)
     bob.forward(600)
 
-solveability_check()
 border_generation()
 maze_generation()
-
+solveability_check()
 
 
 bob.hideturtle()
