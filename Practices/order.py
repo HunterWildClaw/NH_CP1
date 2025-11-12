@@ -1,5 +1,6 @@
 # NH 2nd Order Up!
-
+food_cart=[]
+cost=0
 # Make the dictionary
 food_menu = {
     "Main Meals": {
@@ -22,17 +23,8 @@ food_menu = {
     }
 }
 #Make a function for the customer's order
-def order(choices, food):
-    food_cart=[]
-    price=0
+def order():
     #Give them their options
-    for yummy in choices:
-        print(yummy)
-        #Ask what they want
-        what_they_want=input("Hello customer! Welcome to Chubby's!\nHere's your menu. Please take your time. {}")
-        while True:
-            for yummy in what_they_want:
-                item=input("What you like to order, my good sir?").strip().title()
-                if item in choices:
-                    food_cart.append[item]
-                    price += choices[item]
+    #returns each choice and what the order will cost
+
+#Now run the functions

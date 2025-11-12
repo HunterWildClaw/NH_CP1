@@ -26,7 +26,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
     
-    row_1=0
+    row_1=dum.randint(0,1)
     if row_1==0:
         bob.penup()
         bob.forward(100)
@@ -50,7 +50,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_4=0
+    row_4=dum.randint(0,1)
     if row_4==0:
         bob.penup()
         bob.forward(100)
@@ -83,7 +83,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_8=0
+    row_8=dum.randint(0,1)
     if row_8==0:
         bob.penup()
         bob.forward(100)
@@ -116,7 +116,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_12=0
+    row_12=dum.randint(0,1)
     if row_12==0:
         bob.penup()
         bob.forward(100)
@@ -148,7 +148,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_16=0
+    row_16=dum.randint(0,1)
     bob.teleport(0,-400)
     if row_16==0:
         bob.penup()
@@ -181,7 +181,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_20=0
+    row_20=dum.randint(0,1)
     if row_20==0:
         bob.penup()
         bob.forward(100)
@@ -198,7 +198,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_22=1
+    row_22=dum.randint(0,1)
     if row_22==0:
         bob.penup()
         bob.forward(100)
@@ -214,7 +214,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    row_24=1
+    row_24=dum.randint(0,1)
     if row_24==0:
         bob.penup()
         bob.forward(100)
@@ -235,7 +235,7 @@ def maze_generation():
     bob.teleport(100, 0)
     #Make it face down
     bob.setheading(270)
-    col_1=0
+    col_1=dum.randint(0,1)
     if col_1==0:
         bob.penup()
         bob.forward(100)
@@ -268,7 +268,7 @@ def maze_generation():
         bob.forward(100)
 
 
-    col_5=0
+    col_5=dum.randint(0,1)
     if col_5==0:
         bob.penup()
         bob.forward(100)
@@ -276,7 +276,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    col_6=0
+    col_6=dum.randint(0,1)
     bob.teleport(200,0)
     if col_6==0:
         bob.penup()
@@ -318,7 +318,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    col_11=0
+    col_11=dum.randint(0,1)
     bob.teleport(300,0)
     if col_11==0:
         bob.penup()
@@ -351,7 +351,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    col_15=0
+    col_15=dum.randint(0,1)
     if col_15==0:
         bob.penup()
         bob.forward(100)
@@ -384,7 +384,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    col_19=0
+    col_19=dum.randint(0,1)
     if col_19==0:
         bob.penup()
         bob.forward(100)
@@ -425,7 +425,7 @@ def maze_generation():
         bob.pendown()
         bob.forward(100)
 
-    col_24=0
+    col_24=dum.randint(0,1)
     if col_24==0:
         bob.penup()
         bob.forward(100)
@@ -451,7 +451,8 @@ def solveability_check():
     solver.penup()
     solver.goto(50,0)
     solver.setheading(270)
-    solver.forward(150)
+
+
 
 def border_generation():
     bob.speed(0)
