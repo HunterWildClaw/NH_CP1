@@ -23,8 +23,17 @@ food_menu = {
     }
 }
 #Make a function for the customer's order
-def order():
-    #Give them their options
-    #returns each choice and what the order will cost
+def order(cost, food_cart):
+    #Intrudoce customer and give them their menu
+    print(f"Hello customer! Welcome to Chubby's! Here's your menu.\n{food_menu}")
+    #Then ask for what they want
+    food_cart.append(input('What main course do you want?'))
+    food_cart.append(input('What 2 side dishes do you want?'))
+    food_cart.append(input('What soda do you want?'))
+    for food in food_cart:
+        
 
-#Now run the functions
+
+
+#Use function
+order(cost, food_cart)
