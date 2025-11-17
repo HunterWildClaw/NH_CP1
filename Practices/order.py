@@ -28,14 +28,14 @@ def order(menu):
     print(f"Hello customer! Welcome to Chubby's! Here's your menu.\n{menu}")
     #Then ask for what they want and put it in the list
     food_cart=['','','','']
-    while food_cart[0] not in menu['Main Meals'].keys:
-        food_cart[0]=input('What main course do you want?')
-    while food_cart[1] not in menu['Side Dishes'].keys:        
-        food_cart[1]=input('What would you like for your first side dish?')
-    while food_cart[2] not in menu['Side Dishes'].keys:
-        food_cart[2]=input('What would you like for your second side dish?')
-    while food_cart[3] not in menu['Soda'].keys:
-        food_cart[3]=input('What soda do you want?')
+    while food_cart[0] not in menu['Main Meals'].keys():
+        food_cart[0]=input('What main course do you want? ')
+    while food_cart[1] not in menu['Side Dishes'].keys():        
+        food_cart[1]=input('What would you like for your first side dish? ')
+    while food_cart[2] not in menu['Side Dishes'].keys():
+        food_cart[2]=input('What would you like for your second side dish? ')
+    while food_cart[3] not in menu['Soda'].keys():
+        food_cart[3]=input('What soda do you want? ')
     return food_cart
 
 
