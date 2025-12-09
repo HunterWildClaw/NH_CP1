@@ -1,4 +1,5 @@
 #NH 2nd Final Project
+import time
 
 #PLAYER_NAME=input(“Welcome player. What is your name?”)
 player_name=input("Hello, Player! What name would you like to play as?\nEnter here: ")
@@ -7,16 +8,31 @@ player_hp=12
 #MASTER SWORD = 12
 master_sword=12
 #STICK=3
-stick=3
+stick=4
 #MELEE WEAPON = “stick”
 melee_weapon = stick or master_sword
-
 #PLAYER_ATK=3+MELEE_WEAPON
 player_atk=3+melee_weapon
+#Ranged stuff
+travelers_bow=8
+royal_guards_bow = 16
+bow=travelers_bow or royal_guards_bow
+ranged_weapon=travelers_bow
+ranged_atk=0+ranged_weapon
 
 #Show the player what the world’s like right now and give the history. Also explain that they’re the hero and they are stuck on a sky island.
-#Make variable called player name that asks for their name using an input.
+print(f"Hello and welcome {player_name}! This is the world of Hyrule. A place of fantasy and beauty. And a place of death. The Demon King has rose up and summoned his demon army. The world is in chaos and turmoil. But a hero rose up. Found the Master Sword. And struck against the Demon King, critically wounding him. But the Demon King has one last trick. He corrupted the Hero.\nThe Hero failed.\nBut Now you're here!")
+time.sleep(7)
+print("You can save the world. You can slay the Demon King!\n\nBut first, get off this rock in the sky. 😄 That's right. You're stuck on a sky island. It's a moderately large one. Probably like the size of the BYU campus...")
+time.sleep(6)
+print("Anyhoo, there is a powerful zonai guardian. It's like a guardian from Breath of the Wild but it's all zonai looking. It's emerald colored and shoots a teal laser.\nKill him to find a sleeping aerocuda.")
+time.sleep(5)
 #And also give them a starting stick and a Traveler’s Bow for starting weapons.
+print("You have a TRAVELER'S BOW for your ranged weapon. It gives plus 8 ranged damage.")
+time.sleep(4)
+print(f"You also start with a stick. It gives plus 4 to your attack. You already have 3 attack as well.")
+time.sleep(3)
+print('You start with 12 health. That is pretty much 3 hearts.')
 #Make a function for combat with four arguments of monster hp, monster atk, player atk and player hp and call it combat
 #While loop it
 #		Give player option for bow atk if far away or melee atk if close up
@@ -39,8 +55,9 @@ player_atk=3+melee_weapon
 #			If they die, restart them to the chuchu fight
 #			Elif they win
 # 				teleport them to lookout landing
-#Add 4 more maximum health
+#               Add 4 more maximum health
 #				Hyrule Castle is shaking slightly
+                print("You see Hyrule Castle shaking slightly in the distance.")
 #				Ask if they want to stay and shop
 #				If yes, activate market function
 #				If no, ask where they want to go.
