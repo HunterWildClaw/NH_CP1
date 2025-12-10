@@ -34,10 +34,21 @@ print(f"You also start with a stick. It gives plus 4 to your attack. You already
 time.sleep(3)
 print('You start with 12 health. That is pretty much 3 hearts.')
 #Make a function for combat with four arguments of monster hp, monster atk, player atk and player hp and call it combat
+def combat(monster_hp, monster_atk, player_atk, player_hp):
 #While loop it
-#		Give player option for bow atk if far away or melee atk if close up
-#		Give monster chance to block atk if they have shield
-#		If monster fails to block, subtract monster health from player atk dmg
+    while:
+        #Give player option for bow atk if far away or melee atk if close up
+        player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee")
+        if player_choice_atk=='r':
+            monster_hp-=ranged_atk
+            print(f"The monster now has {monster_hp} hp!")
+        elif player_choice_atk=='m':
+            monster_hp-=player_atk
+            print(f"The monster now has {monster_hp} hp!")
+        else:
+            print("Hey! You need to do the right buttons man! YOU NEED TO LEAVE!! TRY AGAIN!!!")
+            continue
+    
 #		If monster lives, they get to go now
 #		Monster atks with either melee weapon or bow depending on what they have
 #		If bow the player can only dodge
@@ -55,9 +66,11 @@ print('You start with 12 health. That is pretty much 3 hearts.')
 #			If they die, restart them to the chuchu fight
 #			Elif they win
 # 				teleport them to lookout landing
+"""                print("You have been teleported to Hyrule Castle")
 #               Add 4 more maximum health
+                player_hp+=4
 #				Hyrule Castle is shaking slightly
-                print("You see Hyrule Castle shaking slightly in the distance.")
+                print("You see Hyrule Castle shaking slightly in the distance.")"""
 #				Ask if they want to stay and shop
 #				If yes, activate market function
 #				If no, ask where they want to go.
