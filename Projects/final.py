@@ -1,5 +1,6 @@
 #NH 2nd Final Project
 import time
+import random as r
 
 #PLAYER_NAME=input(“Welcome player. What is your name?”)
 player_name=input("Hello, Player! What name would you like to play as?\nEnter here: ")
@@ -36,7 +37,7 @@ print('You start with 12 health. That is pretty much 3 hearts.')
 #Make a function for combat with four arguments of monster hp, monster atk, player atk and player hp and call it combat
 def combat(monster_hp, monster_atk, player_atk, player_hp):
 #While loop it
-    while:
+    while True:
         #Give player option for bow atk if far away or melee atk if close up
         player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee")
         if player_choice_atk=='r':
@@ -48,12 +49,18 @@ def combat(monster_hp, monster_atk, player_atk, player_hp):
         else:
             print("Hey! You need to do the right buttons man! YOU NEED TO LEAVE!! TRY AGAIN!!!")
             continue
-    
 #		If monster lives, they get to go now
-#		Monster atks with either melee weapon or bow depending on what they have
-#		If bow the player can only dodge
-#		If melee give player option to block monster atk
-#		If player fails to block, subtract player hp from monster atk
+        if monster_hp > 0:
+            player_block_chance=r.randint(1,2)
+            if player_block_chance==1:
+                print("Monster attacked and you blocked! Congratulations!")
+            elif player_block_chance==2:
+                player_hp-=monster_atk
+                print(f"The monster attacked and you failed to block. Sounds like a skill issue. You now have {player_hp} hp!")
+        elif monster_hp <= 0:
+            print("You killed the guy! Gratz")
+        
+        if player_hp <= 0:
 #		If player hp < 0, bring code back to the start of the room
 #Def tabantha()
 #	An ice chuchu with 15 hp and 2 frost atk attacks player
