@@ -22,7 +22,7 @@ ranged_weapon=travelers_bow
 ranged_atk=0+ranged_weapon
 
 #Show the player what the world’s like right now and give the history. Also explain that they’re the hero and they are stuck on a sky island.
-print(f"Hello and welcome {player_name}! This is the world of Hyrule. A place of fantasy and beauty. And a place of death. The Demon King has rose up and summoned his demon army. The world is in chaos and turmoil. But a hero rose up. Found the Master Sword. And struck against the Demon King, critically wounding him. But the Demon King has one last trick. He corrupted the Hero.\nThe Hero failed.\nBut Now you're here!")
+print(f"Hello and welcome {player_name}! This is the world of Hyrule. A place of fantasy and beauty. And a place of death. The Demon King has rose up and summoned his demon army. The world is in chaos and turmoil. But a hero rose up. Found the Master Sword. And struck against the Demon King, critically wounding him. But the Demon King has one last trick. He corrupted the Hero.\nThe Hero failed.\nBut now you're here!")
 time.sleep(7)
 print("You can save the world. You can slay the Demon King!\n\nBut first, get off this rock in the sky. 😄 That's right. You're stuck on a sky island. It's a moderately large one. Probably like the size of the BYU campus...")
 time.sleep(6)
@@ -39,7 +39,7 @@ def combat(monster_hp, monster_atk, player_atk, player_hp):
 #While loop it
     while True:
         #Give player option for bow atk if far away or melee atk if close up
-        player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee")
+        player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee: ")
         if player_choice_atk=='r':
             monster_hp-=ranged_atk
             print(f"The monster now has {monster_hp} hp!")
@@ -57,11 +57,15 @@ def combat(monster_hp, monster_atk, player_atk, player_hp):
             elif player_block_chance==2:
                 player_hp-=monster_atk
                 print(f"The monster attacked and you failed to block. Sounds like a skill issue. You now have {player_hp} hp!")
+                if player_hp <= 0:
+                    print("Respawning...")
+                    continue
         elif monster_hp <= 0:
             print("You killed the guy! Gratz")
-        
-        if player_hp <= 0:
+        break
 #		If player hp < 0, bring code back to the start of the room
+    return player_hp
+combat(15, 5, 7, 12)
 #Def tabantha()
 #	An ice chuchu with 15 hp and 2 frost atk attacks player
 #	Use combat function and insert 15 and 2 for mobs stats and player stats for stats
