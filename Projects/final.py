@@ -34,12 +34,17 @@ time.sleep(4)
 print(f"You also start with a stick. It gives plus 4 to your attack. You already have 3 attack as well.")
 time.sleep(3)
 print('You start with 12 health. That is pretty much 3 hearts.')
+time.sleep(2)
+print("Loading...")
+time.sleep(1)
+print("Loading...")
+time.sleep(0.01)
 #Make a function for combat with four arguments of monster hp, monster atk, player atk and player hp and call it combat
 def combat(monster_hp, monster_atk, player_atk, player_hp):
 #While loop it
-    while True:
-        #Give player option for bow atk if far away or melee atk if close up
-        player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee: ")
+    #Give player option for bow atk if far away or melee atk if close up
+    player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee: ")
+    while monster_hp > 0 or player_hp >0:
         if player_choice_atk=='r':
             monster_hp-=ranged_atk
             print(f"The monster now has {monster_hp} hp!")
@@ -58,13 +63,14 @@ def combat(monster_hp, monster_atk, player_atk, player_hp):
                 player_hp-=monster_atk
                 print(f"The monster attacked and you failed to block. Sounds like a skill issue. You now have {player_hp} hp!")
                 if player_hp <= 0:
-                    print("Respawning...")
+                    print("You died!\nRespawning...")
                     continue
         elif monster_hp <= 0:
             print("You killed the guy! Gratz")
-        break
 #		If player hp < 0, bring code back to the start of the room
     return player_hp
+print("So you were wandering and ran into the zonai guardian! But he doesn't notice you. You can attack first!")
+time.sleep(1)
 combat(15, 5, 7, 12)
 #Def tabantha()
 #	An ice chuchu with 15 hp and 2 frost atk attacks player
