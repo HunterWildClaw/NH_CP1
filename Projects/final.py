@@ -19,28 +19,30 @@ travelers_bow=8
 royal_guards_bow = 16
 bow=travelers_bow or royal_guards_bow
 ranged_weapon=travelers_bow
-ranged_atk=0+ranged_weapon
+ranged_atk=ranged_weapon
+#MONEYS!
+player_currency=20
 
 #Show the player what the world’s like right now and give the history. Also explain that they’re the hero and they are stuck on a sky island.
-print(f"Hello and welcome {player_name}! This is the world of Hyrule. A place of fantasy and beauty. And a place of death. The Demon King has rose up and summoned his demon army. The world is in chaos and turmoil. But a hero rose up. Found the Master Sword. And struck against the Demon King, critically wounding him. But the Demon King has one last trick. He corrupted the Hero.\nThe Hero failed.\nBut now you're here!")
-time.sleep(7)
-print("You can save the world. You can slay the Demon King!\n\nBut first, get off this rock in the sky. 😄 That's right. You're stuck on a sky island. It's a moderately large one. Probably like the size of the BYU campus...")
+print(f"Hello and welcome {player_name}! I am Navi, your fairy friend! This is the world of Hyrule. A place of fantasy and beauty. And a place of death. The Demon King has rose up and summoned his demon army. The world is in chaos and turmoil. But a hero rose up. Found the Master Sword. And struck against the Demon King, critically wounding him. But the Demon King has one last trick. He corrupted the Hero.\nThe Hero failed.\nBut now you're here!")
 time.sleep(6)
-print("Anyhoo, there is a powerful zonai guardian. It's like a guardian from Breath of the Wild but it's all zonai looking. It's emerald colored and shoots a teal laser.\nKill him to find a sleeping aerocuda.")
+print("You can save the world. You can slay the Demon King!\n\nBut first, get off this rock in the sky. 😄 That's right. You're stuck on a sky island. It's a moderately large one. Probably like the size of the BYU campus...")
 time.sleep(5)
+print("Anyhoo, there is a powerful zonai guardian. It's like a guardian from Breath of the Wild but it's all zonai looking. It's emerald colored and shoots a teal laser.\nKill him to find a sleeping aerocuda.")
+time.sleep(4)
 #And also give them a starting stick and a Traveler’s Bow for starting weapons.
 print("You have a TRAVELER'S BOW for your ranged weapon. It gives plus 8 ranged damage.")
-time.sleep(4)
-print(f"You also start with a stick. It gives plus 4 to your attack. You already have 3 attack as well.")
 time.sleep(3)
-print('You start with 12 health. That is pretty much 3 hearts.')
+print(f"You also start with a stick. It gives plus 4 to your attack. You already have 3 attack as well.")
 time.sleep(2)
-print("Loading...")
+print('You start with 12 health. That is pretty much 3 hearts.')
 time.sleep(1)
 print("Loading...")
-time.sleep(0.01)
+time.sleep(0.1)
+print("Loading...")
+time.sleep(0.1)
 #Make a function for combat with four arguments of monster hp, monster atk, player atk and player hp and call it combat
-def combat(monster_hp, monster_atk, player_atk, player_hp):
+def combat(monster_hp, monster_atk, player_hp):
 #While loop it
     #Give player option for bow atk if far away or melee atk if close up
     player_choice_atk=input("Would you like to use your bow or your melee weapon? \nPress 'r' for ranged or 'm' for melee: ")
@@ -53,45 +55,68 @@ def combat(monster_hp, monster_atk, player_atk, player_hp):
             print(f"The monster now has {monster_hp} hp!")
         else:
             print("Hey! You need to do the right buttons man! YOU NEED TO LEAVE!! TRY AGAIN!!!")
-            continue
+            break
 #		If monster lives, they get to go now
         if monster_hp > 0:
             player_block_chance=r.randint(1,2)
             if player_block_chance==1:
                 print("Monster attacked and you blocked! Congratulations!")
+                continue
             elif player_block_chance==2:
                 player_hp-=monster_atk
                 print(f"The monster attacked and you failed to block. Sounds like a skill issue. You now have {player_hp} hp!")
                 if player_hp <= 0:
                     print("You died!\nRespawning...")
+                    break
+                else:
                     continue
         elif monster_hp <= 0:
             print("You killed the guy! Gratz")
+            break
 #		If player hp < 0, bring code back to the start of the room
     return player_hp
 print("So you were wandering and ran into the zonai guardian! But he doesn't notice you. You can attack first!")
 time.sleep(1)
-combat(15, 5, 7, 12)
+combat(15, 5, player_hp)
 #Def tabantha()
+def tabantha():
 #	An ice chuchu with 15 hp and 2 frost atk attacks player
+    print("An Ice Chuchu atacks you! But it misses and now you get to go!")
 #	Use combat function and insert 15 and 2 for mobs stats and player stats for stats
+    combat(15, 2, player_hp)
 #	If player dies reset
 #	Else if monster dies player has option to eat to heal if low health or move on
+    tabantha_choice=input("Whew! Close call! Push 'i' to acces your inventory. Or push 'c' to continue: ")
+    player_currency+=5
 #		If they move on
+    if tabantha_choice=='c':
 #			They have to fight an Abominable Snowman
-#			It has 30 hp and 15 atk
+        print("A giant Yeti jumped out at you! You managed to dodge so it's your turn.")
+#			It has 30 hp and 6 atk
+        combat(30, 6, player_hp)
 #			If they die, restart them to the chuchu fight
+        if player_hp<=0:
+            tabantha()
 #			Elif they win
-# 				teleport them to lookout landing
-"""                print("You have been teleported to Hyrule Castle")
-#               Add 4 more maximum health
-                player_hp+=4
-#				Hyrule Castle is shaking slightly
-                print("You see Hyrule Castle shaking slightly in the distance.")"""
+        elif player_hp>0:
+            player_currency+=10
+            print("Gratz! U won!")
+# 			teleport them to lookout landing
+            print("You have been teleported to Hyrule Castle")
+#           Add 4 more maximum health
+            player_hp+=4
+#			Hyrule Castle is shaking slightly
+            print("You see Hyrule Castle shaking slightly in the distance.")
 #				Ask if they want to stay and shop
+            should_i_stay_or_i_go=input("Would you like to stay and shop or would you like to go to a new region? 's' to stay and 'g' to go")
 #				If yes, activate market function
+            if should_i_stay_or_i_go=='s':
+                market(player_currency)
 #				If no, ask where they want to go.
-# (Same regions as before minus the region they just did)
+            elif should_i_stay_or_i_go=='g':
+                print("What region would you like?")
+                second_region=input("eldin, tabantha sky, gerudo, lanaryu, or eldin caves: ")
+#               (Same regions as before minus the region they just did)
 #		Elif they eat
 #			Display their inventory and show their food
 #			If they have food
